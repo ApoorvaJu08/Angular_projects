@@ -1,8 +1,28 @@
 <div class="row">
   <div class="col-sm-9">
-    <user-detail></user-detail>
+    <div *ngIf="!hidenewUser">
+      <h2>New User</h2>
+      <!-- <form #form="ngForm" class="well"> -->
+        <form #form="ngForm" (ngSubmit)="onSubmitAddUser(form.value)" class="well">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" class="form-control" required name="name" ngModel>
+        </div>
+        <div class="form-group">
+          <label>Title</label>
+          <input type="text" class="form-control" required name="title" ngModel>
+        </div>
+        <button type="submit" class="btn btn-success">Save</button>
+      </form>
+    </div>
+    <user-detail (updateUserEvent)="onUpdateUserEvent($event)"
+    (deleteUserEvent)="onDeleteUserEvent($event)"
+    *ngIf = "selectedUser && !hidenewUser" [user] = "selectedUser"></user-detail>
+    <!-- <user-detail
+    *ngIf = "selectedUser && !hidenewUser" [user] = "selectedUser"></user-detail> -->
   </div>
   <div class="col-sm-3">
-    <user-list [users]="users"></user-list>
+    <button (click)="newUser()" style="margin-bottom: 2px;" type="button" class="btn btn-success btn-block">+ New User</button>
+    <user-list (SelectUser) = "onSelectUser($event)" [users]="users"></user-list>
   </div>
 </div>

@@ -1,1 +1,13 @@
-<p>user-detail works!</p>
+<div>
+  <form>
+    <div class="form-group">
+      <input type="input" class="form-control" name="name" required placeholder="name" [(ngModel)] = "user.name">
+    </div>
+    <h3 *ngIf="!editTitle" (click)="onTitleClick()">{{user.title}}</h3>
+    <div *ngIf="editTitle" class="form-group">
+      <input type="input" class="form-control" name="title" required placeholder="title" [(ngModel)] = "user.title">
+    </div>
+    <button type="button" (click)="updateUser()" class="btn btn-primary">Update</button>
+    <button type="button" (click)="deleteUser()" class="btn btn-primary">Delete</button>
+  </form>
+</div>

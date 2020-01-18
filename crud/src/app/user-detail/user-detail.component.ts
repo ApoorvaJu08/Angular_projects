@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { User } from './../user';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+// import { EventEmitter } from 'protractor';
 
 @Component({
   selector: 'user-detail',
@@ -6,10 +8,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-detail.component.css']
 })
 export class UserDetailComponent implements OnInit {
+  @Input() user: any;
+  @Output() private updateUserEvent = new EventEmitter();
+  @Output() private deleteUserEvent = new EventEmitter();
+
+  private editTitle: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngOnChanges() {
+    this.editTitle = false;
+  }
+
+  onTitleClick() {
+    this.editTitle = true;
+  }
+
+  updateUser() {
+    this.updateUserEvent.emit(this.user);
+  }
+
+  deleteUser() {
+    this.deleteUserEvent.emit(this.user);
   }
 
 }
