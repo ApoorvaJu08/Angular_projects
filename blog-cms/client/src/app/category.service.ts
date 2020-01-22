@@ -16,6 +16,7 @@ import { catchError, tap } from 'rxjs/operators';
 import { Category } from './category/category';
 
 const apiUrl = 'http://localhost:3000/api/category/';
+// const apiUrl = 'http://localhost:3000/api/category';
 
 @Injectable({
   providedIn: 'root'

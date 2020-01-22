@@ -17,7 +17,7 @@ import { Category } from './category/category';
 import { Post } from './post/post';
 
 // const apiUrl = 'http://localhost:3000/api/public/';
-const apiUrl = 'http://localhost:3000/api/public/';
+const apiUrl = 'http://localhost:3000/api/';
 
 @Injectable({
   providedIn: 'root'

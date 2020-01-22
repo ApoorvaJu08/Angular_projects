@@ -23,15 +23,15 @@ export class AppComponent implements OnInit {
         this.loginStatus = false;
       }
     });
-    this.api.getCategories()
-      .subscribe((res: any) => {
-        this.categories = res;
-        console.log(this.categories);
-      }, err => {
-        console.log(err);
-      });
+    // this.api.getCategories()
+    //   .subscribe((res: any) => {
+    //     this.categories = res;
+    //     console.log(this.categories);
+    //   }, err => {
+    //     console.log(err);
+    //   });
   }
-
+// ab login try kro
   logout() {
     this.authService.logout()
       .subscribe((res: any) => {
