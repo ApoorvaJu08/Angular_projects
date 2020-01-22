@@ -17,6 +17,8 @@ export class UserDetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('updateUserEvent: ', this.updateUserEvent);
+
   }
 
   ngOnChanges() {

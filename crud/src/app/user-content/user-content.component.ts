@@ -14,7 +14,9 @@ export class UserContentComponent implements OnInit {
   // users: Array<User>;
   // users: User;
   // users: Observable<IUsers[]>;
-  users: User[];
+  // users: User[];
+  users: any = [];
+  // StudentData: any = [];
   // users: Array<any>;
 
 
@@ -25,13 +27,15 @@ export class UserContentComponent implements OnInit {
 
   ngOnInit() {
     this._userService.getUsers()
-    //  .subscribe(resUserData => this.users = resUserData);
-        .subscribe ((resUserData) => {
-          console.log('resUserData: ', resUserData);
-        });
-      }
-//open chrome
-  onSelectUser(user:any){
+     .subscribe(resUserData => this.users = resUserData);
+        // .subscribe ((resUserData: User[]) => {
+          // console.log('resUserData: ', resUserData);
+          // this.users = resUserData;
+        // });
+
+  }
+
+  onSelectUser(user: any) {
     this.selectedUser = user;
     this.hidenewUser = true;
     console.log(this.selectedUser);
@@ -40,7 +44,7 @@ export class UserContentComponent implements OnInit {
   onSubmitAddUser(user: User)
   {
     this._userService.addUser(user)
-     .subscribe(resNewUser => {
+     .subscribe((resNewUser: User) => {
        this.users.push(resNewUser);
        this.hidenewUser = true;
        this.selectedUser = resNewUser;
@@ -53,18 +57,18 @@ export class UserContentComponent implements OnInit {
     this.selectedUser = null;
   }
 
-  onDeleteUserEvent(user: any) {
-    let userArray = this.users;
-    this._userService.deleteUser(user)
-      .subscribe(resDeletedUser => {
-        for (let i = 0; i < userArray.length; i++) {
-          if (userArray[i]._id === user._id) {
-            userArray.splice(i, 1);
-          }
-        }
-      });
-    this.selectedUser = null;
-    }
+  // onDeleteUserEvent(user: any) {
+  //   let userArray = this.users;
+  //   this._userService.deleteUser(user)
+  //     .subscribe(resDeletedUser => {
+  //       for (let i = 0; i < userArray.length; i++) {
+  //         if (userArray[i]._id === user._id) {
+  //           userArray.splice(i, 1);
+  //         }
+  //       }
+  //     });
+  //   this.selectedUser = null;
+  //   }
 
   newUser() {
     this.hidenewUser = false;

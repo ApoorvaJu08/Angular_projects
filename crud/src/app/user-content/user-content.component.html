@@ -15,11 +15,11 @@
         <button type="submit" class="btn btn-success">Save</button>
       </form>
     </div>
-    <user-detail (updateUserEvent)="onUpdateUserEvent($event)"
+    <!-- <user-detail (updateUserEvent)="onUpdateUserEvent($event)"
     (deleteUserEvent)="onDeleteUserEvent($event)"
-    *ngIf = "selectedUser && !hidenewUser" [user] = "selectedUser"></user-detail>
-    <!-- <user-detail
     *ngIf = "selectedUser && !hidenewUser" [user] = "selectedUser"></user-detail> -->
+    <user-detail (updateUserEvent)="onUpdateUserEvent($event)"
+    *ngIf = "selectedUser && !hidenewUser" [user] = "selectedUser"></user-detail>
   </div>
   <div class="col-sm-3">
     <button (click)="newUser()" style="margin-bottom: 2px;" type="button" class="btn btn-success btn-block">+ New User</button>

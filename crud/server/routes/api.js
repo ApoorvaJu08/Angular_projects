@@ -10,8 +10,10 @@ mongoose.Promise = global.Promise
 //    console.error("Error! " + err)
 //  }
 //})
+// yeah cause local mongoose sever is workokthanksing fine// mongoose.connect(db,{ useNewUrlParser: true });
+// yeah, try on your side will hepl you later, okay?thankyou bye
 mongoose.connect(db,
-  {  dbName: 'crud_basic',useNewUrlParser: true,
+  {  dbName: 'crud-user',useNewUrlParser: true,
       useUnifiedTopology: true
   })
 
@@ -51,7 +53,7 @@ router.get('/users/:id', function(req, res){
     }
   })
 })
-
+// waitok
 router.post('/user', function(req, res){
   console.log('Post a user')
   var newUser = new User()
