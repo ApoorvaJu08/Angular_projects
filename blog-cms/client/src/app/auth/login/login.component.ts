@@ -11,7 +11,7 @@ import { ErrorStateMatcher } from '@angular/material/core';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  username = '';
+  email = '';
   password = '';
   matcher = new MyErrorStateMatcher();
   isLoadingResults = false;
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private router: Router, private authService: AuthService) { }
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      'username' : [null, Validators.required],
+      'email' : [null, Validators.required],
       'password' : [null, Validators.required]
     });
   }
