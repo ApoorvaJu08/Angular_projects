@@ -8,6 +8,7 @@
   "dependencies": {
     "@ckeditor/ckeditor5-angular": "^1.1.2",
     "@ckeditor/ckeditor5-build-classic": "^16.0.0",
+    "bcrypt": "^3.0.7",
     "bcrypt-nodejs": "0.0.3",
     "bluebird": "^3.7.2",
     "cookie-parser": "~1.4.4",
