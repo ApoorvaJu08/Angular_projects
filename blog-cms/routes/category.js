@@ -1,5 +1,5 @@
 var passport = require('passport');
-var config = require('../config/database');
+var config = require('../config/settings');
 require('../config/passport')(passport);
 var express = require('express');
 var jwt = require('jsonwebtoken');
