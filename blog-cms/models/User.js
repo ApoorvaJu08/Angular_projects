@@ -8,13 +8,17 @@ var UserSchema = new Schema({
         unique: true,
         required: true
     },
+    // email: {
+    //     type: String,
+    //     unique: true,
+    //     required: true
+    // },
   password: {
         type: String,
         required: true
     }
 });
-// you dont have email in schema,y esthen why are you sending the emai :-I i will correct it, ya, it will work fine now? okay?no ?Thweht?the category is not getting displayed
-// first add the categorybut the console is saying cannot get the url
+
 UserSchema.pre('save', function (next) {
     var user = this;
     if (this.isModified('password') || this.isNew) {

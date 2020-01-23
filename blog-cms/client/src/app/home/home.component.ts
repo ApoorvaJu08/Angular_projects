@@ -15,9 +15,6 @@ export class HomeComponent implements OnInit {
   constructor(private api: HomeService) { }
 
   ngOnInit() {
-    // sika mtbl hai ki jb page load hoga to yeh api hit hogi, aur data aayega
-    // hm ngOnInit pr api tb hit krate hai, jaise hi hme page load hone pr koi data show krana hota hai
-    // jaishe ki user- profile, jaha pr page opn hoti hi user ki details show krani hoti haiha.
     this.api.getPosts()
       .subscribe((res: any) => {
         this.posts = res;
