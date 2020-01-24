@@ -58,13 +58,29 @@ router.get('/:id', passport.authenticate('jwt', { session: false}), function(req
     var token = getToken(req.headers);
     if (token) {
       Post.findByIdAndRemove(req.params.id, req.body, function (err, post) {
+      // Post.findByIdAndRemove(req.params.id, function (err, post) {
         if (err) return next(err);
         res.json(post);
+        // console.log(err, post);
+        // if (err) return next(err);
+        // res.json(post);
       });
     } else {
       return res.status(403).send({success: false, msg: 'Unauthorized.'});
     }
   });
+
+  // router.delete('/:id', passport.authenticate('jwt', { session: false}), function(req, res, next) {
+  //   var token = getToken(req.headers);
+  //   if (token) {
+  //     Post.findByIdAndRemove(req.params.id, req.body, function (err, post) {
+  //       if (err) return next(err);
+  //       res.json(post);
+  //     });
+  //   } else {
+  //     return res.status(403).send({success: false, msg: 'Unauthorized.'});
+  //   }
+  // });
 
   getToken = function (headers) {
     if (headers && headers.authorization) {

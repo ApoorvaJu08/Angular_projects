@@ -34,7 +34,7 @@ export class DetailsComponent implements OnInit {
     this.api.getPost(id)
       .subscribe((data: any) => {
         this.post = data;
-        console.log(this.post);
+        // console.log(this.post);
         this.isLoadingResults = false;
       });
   }

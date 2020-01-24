@@ -56,6 +56,6 @@ export class AuthService {
   }
 
   private log(message: string) {
-    console.log(message);
+    // console.log(message);
   }
 }

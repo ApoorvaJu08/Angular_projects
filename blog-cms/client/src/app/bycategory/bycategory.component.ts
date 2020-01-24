@@ -26,10 +26,10 @@ export class BycategoryComponent implements OnInit {
     this.api.getPostsByCategory(id)
       .subscribe((res: any) => {
         this.posts = res;
-        console.log(this.posts);
+        // console.log(this.posts);
         this.isLoadingResults = false;
       }, err => {
-        console.log(err);
+        // console.log(err);
         this.isLoadingResults = false;
       });
   }

@@ -62,6 +62,14 @@ export class PostService {
     );
   }
 
+  // deletePost(id: any, post: Post): Observable<Post> {
+  //   const url = `${apiUrl}/${id}`;
+  //   return this.http.delete<Post>(url).pipe(
+  //     tap(_ => console.log(`deleted post id=${id}`)),
+  //     catchError(this.handleError<Post>('deletePost'))
+  //   );
+  // }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
@@ -73,6 +81,8 @@ export class PostService {
   }
 
   private log(message: string) {
-    console.log(message);
+    // console.log(message);
   }
 }
+
+// now run

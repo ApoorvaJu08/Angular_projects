@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit {
       .subscribe(res => {
         this.router.navigate(['login']);
       }, (err) => {
-        console.log(err);
+        // console.log(err);
         alert(err.error);
       });
   }

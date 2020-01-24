@@ -10,7 +10,7 @@ var User = require("../models/User");
 
 router.post('/login', function(req, res) {
   User.findOne({
-    username: req.body.username
+    email: req.body.email
   }, function(err, user) {
     if (err) throw err;
 
@@ -33,11 +33,12 @@ router.post('/login', function(req, res) {
 });
 
 router.post('/register', function(req, res) {
-  if (!req.body.username || !req.body.password) {
-    res.json({success: false, msg: 'Please pass username and password.'});
+  if (!req.body.username || !req.body.email || !req.body.password) {
+    res.json({success: false, msg: 'Please pass username, email and password.'});
   } else {
     var newUser = new User({
       username: req.body.username,
+      email: req.body.email,
       password: req.body.password
     });
     // save the user
@@ -55,5 +56,7 @@ router.post('/logout', passport.authenticate('jwt', { session: false}), function
   req.logout();
   res.json({success: true});
 });
+
+//opn chrome
 
 module.exports = router;

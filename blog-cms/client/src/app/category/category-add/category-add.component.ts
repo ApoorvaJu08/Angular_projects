@@ -46,7 +46,7 @@ export class CategoryAddComponent implements OnInit {
           this.isLoadingResults = false;
           this.router.navigate(['/category-details', id]);
         }, (err: any) => {
-          console.log(err);
+          // console.log(err);
           this.isLoadingResults = false;
         });
   }

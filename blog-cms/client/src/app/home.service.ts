@@ -68,6 +68,6 @@ export class HomeService {
   }
 
   private log(message: string) {
-    console.log(message);
+    // console.log(message);
   }
 }

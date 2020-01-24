@@ -19,10 +19,6 @@ var Category = require("../models/Category");
 // });
 //see
 
-//localhost:3000/api/category you are already here then after appending below url it will become
-// localhost:3000/api/category/api/category this.
-// If you want to hit your api on /api/category, the remove the below url
-// run now
 router.get('/', passport.authenticate('jwt', { session: false}), function(req, res) {
   var token = getToken(req.headers);
   if (token) {
@@ -75,6 +71,7 @@ router.delete('/:id', passport.authenticate('jwt', { session: false}), function(
   var token = getToken(req.headers);
   if (token) {
     Category.findByIdAndRemove(req.params.id, req.body, function (err, category) {
+    // Category.findByIdAndRemove(req.params.id, function (err, category) {
       if (err) return next(err);
       res.json(category);
     });
