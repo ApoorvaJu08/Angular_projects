@@ -60,7 +60,7 @@ export class PostAddComponent implements OnInit {
           this.isLoadingResults = false;
           this.router.navigate(['/post/details', id]);
         }, (err: any) => {
-          console.log(err);
+          // console.log(err);
           this.isLoadingResults = false;
         });
   }
@@ -69,10 +69,10 @@ export class PostAddComponent implements OnInit {
     this.catApi.getCategories()
       .subscribe((res: any) => {
         this.categories = res;
-        console.log(this.categories);
+        // console.log(this.categories);
         this.isLoadingResults = false;
       }, err => {
-        console.log(err);
+        // console.log(err);
         this.isLoadingResults = false;
       });
   }

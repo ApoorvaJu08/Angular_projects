@@ -60,7 +60,7 @@ export class CategoryService {
   //     catchError(this.handleError<Category>('deleteCategory'))
   //   );
   // }
- // konsa comment krna hia? jo phle the vo y niche vala h ok
+
   deleteCategory(id: any): Observable<Category> {
     const url = `${apiUrl}/${id}`;
     return this.http.delete<Category>(url).pipe(
@@ -72,7 +72,7 @@ export class CategoryService {
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
-      console.error(error); // log to console instead
+      // console.error(error); // log to console instead
       this.log(`${operation} failed: ${error.message}`);
 
       return of(result as T);

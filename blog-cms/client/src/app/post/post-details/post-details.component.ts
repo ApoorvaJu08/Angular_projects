@@ -35,7 +35,7 @@ export class PostDetailsComponent implements OnInit {
       .subscribe((data: any) => {
         this.post = data;
         this.post.id = data._id;
-        console.log(this.post);
+        // console.log(this.post);
         this.isLoadingResults = false;
       });
   }
@@ -47,7 +47,7 @@ export class PostDetailsComponent implements OnInit {
           this.isLoadingResults = false;
           this.router.navigate(['/post']);
         }, (err) => {
-          console.log(err);
+          // console.log(err);
           this.isLoadingResults = false;
         }
       );

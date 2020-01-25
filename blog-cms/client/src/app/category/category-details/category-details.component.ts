@@ -24,14 +24,14 @@ export class CategoryDetailsComponent implements OnInit {
       .subscribe((data: any) => {
         this.category = data;
         this.category.id = data._id;
-        console.log('category: ', this.category);
+        // console.log('category: ', this.category);
         this.isLoadingResults = false;
       });
   }
 
   deleteCategory(id: any) {
     this.isLoadingResults = true;
-    console.log('id: ', id);
+    // console.log('id: ', id);
     this.api.deleteCategory(id)
       .subscribe(res => {
           this.isLoadingResults = false;

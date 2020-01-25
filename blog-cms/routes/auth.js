@@ -57,6 +57,4 @@ router.post('/logout', passport.authenticate('jwt', { session: false}), function
   res.json({success: true});
 });
 
-//opn chrome
-
 module.exports = router;
