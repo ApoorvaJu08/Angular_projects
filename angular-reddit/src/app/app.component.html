@@ -1,22 +1,27 @@
 <div class="container">
-  <div class="add-form">
+  <div class="add-form py-5">
     <h3 class="text-center">Add a Link</h3>
     <form class="example-form">
 
       <div class="title-div">
         <mat-form-field class="example-full-width d-block">
           <mat-label>Title</mat-label>
-          <input matInput>
+          <input matInput #newtitle name="title">
         </mat-form-field>
       </div>
 
       <div class="link-div">
         <mat-form-field class="example-full-width d-block">
           <mat-label>Link</mat-label>
-          <input matInput>
+          <input matInput #newlink name="link">
         </mat-form-field>
+      </div>
+
+      <div class="submit-btn mt-3">
+        <button (click)="addArticle(newtitle, newlink)" class="btn btn-primary">Submit link</button>
       </div>
 
     </form>
   </div>
+  <app-article></app-article>
 </div>

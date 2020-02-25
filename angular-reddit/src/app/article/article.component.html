@@ -1,0 +1,42 @@
+<div class="article">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-3">
+        <div class="points-div bg-light py-3 px-3 text-center font-weight-bold">
+          <div class="points">{{ votes }}</div>
+          <div class="points-label">
+            <p>Points</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-9">
+        <div class="description-div">
+          <div class="row">
+            <a href="{{ link }}">{{ title }}</a>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="vote-up">
+                <a href (click)="voteUp()">
+                  <!-- <i class="arrow up icon"></i>upvote -->
+                  <i class="material-icons">thumb_up</i>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="vote-down">
+                <a href (click)="voteDown()">
+                  <!-- <i class="arrow down icon"></i>downvote -->
+                  <i class="material-icons">thumb_down</i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
