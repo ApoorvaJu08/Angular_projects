@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Product } from './product.model';
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -29,5 +28,8 @@ export class AppComponent {
         ['Men', 'Accessories', 'Hats'],
         29.99)
     ];
+  }
+  productWasSelected(product: Product): void {
+    console.log('Product clicked: ', product);
   }
 }
