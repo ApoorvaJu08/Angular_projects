@@ -1,3 +1,7 @@
+This is an application made with angular which has ffeatures like reddit.
+
+Live Demo: https://angular-reddit-lovat-eight.now.sh/ 
+
 # AngularReddit
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.1.
