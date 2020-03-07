@@ -9,6 +9,7 @@ export class UsersComponent implements OnInit {
   users: User[];
   showExtended: boolean = true;
   loaded: boolean = false;
+  enableAdd: boolean = true;
   constructor() { }
 
   ngOnInit() {
@@ -21,7 +22,8 @@ export class UsersComponent implements OnInit {
             street: '50 main st',
             city: 'Boston',
             state: 'MA'
-          }
+          },
+          image: 'http://lorempixel.com/600/600/people/3'
         },
         { firstName: 'Kevin',
           lastName: 'Doe',
@@ -30,7 +32,8 @@ export class UsersComponent implements OnInit {
             street: '50 main st',
             city: 'Boston',
             state: 'MA'
-          }
+          },
+          image: 'http://lorempixel.com/600/600/people/2'
         },
         { firstName: 'Mark',
           lastName: 'Doe',
@@ -39,7 +42,8 @@ export class UsersComponent implements OnInit {
             street: '50 main st',
             city: 'Boston',
             state: 'MA'
-          }
+          },
+          image: 'http://lorempixel.com/600/600/people/1'
         },
       ];
       this.loaded = true;
