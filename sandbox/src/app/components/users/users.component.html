@@ -1,12 +1,19 @@
 <h2>Users</h2>
-<button [disabled]="!enableAdd" class="btn btn-light btn-block mb-3">Add New User</button>
+<button [disabled]="!enableAdd" [ngClass]="currentClasses" class="btn btn-light btn-block mb-3">Add New User</button>
 <ul class="list-unstyled" *ngIf="loaded && users?.length > 0">
-  <li class="card card-body mb-2" *ngFor="let user of users">
-    <h3>{{ user.firstName }} {{ user.lastName}}</h3>
-    <ul class="list-group" *ngIf="showExtended && user.age && user.address">
-      <li class="list-group-item">Age: {{ user.age }}</li>
-      <li class="list-group-item">Address: {{user.address.street}} {{user.address.city}}, {{user.address.state}} </li>
-    </ul>
+  <li class="card card-body mb-2" *ngFor="let user of users" [class.bg-light]="user.isActive">
+    <div class="row">
+      <div class="col-sm-4">
+        <img *ngIf="user.image" class="img-fluid" [src]="user.image" alt="">
+      </div>
+      <div class="col-sm-8">
+        <h3>{{ user.firstName }} {{ user.lastName}}</h3>
+        <ul class="list-group" *ngIf="showExtended && user.age && user.address">
+          <li class="list-group-item">Age: {{ user.age }}</li>
+          <li class="list-group-item">Address: {{user.address.street}} {{user.address.city}}, {{user.address.state}} </li>
+        </ul>
+      </div>
+    </div>
   </li>
 </ul>
 
