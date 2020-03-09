@@ -7,10 +7,11 @@ import { User } from '../../models/user';
 })
 export class UsersComponent implements OnInit {
   users: User[];
-  showExtended: boolean = true;
+  showExtended: boolean = false;
   loaded: boolean = false;
   enableAdd: boolean = true;
-  currentClasses = {};
+  // currentClasses = {};
+  // currentStyles = {};
   constructor() { }
 
   ngOnInit() {
@@ -24,8 +25,10 @@ export class UsersComponent implements OnInit {
             city: 'Boston',
             state: 'MA'
           },
-          image: 'http://lorempixel.com/600/600/people/3',
-          isActive: true
+          // image: 'http://lorempixel.com/600/600/people/3',
+          isActive: true,
+          // balance: 100,
+          registered: new Date('08/11/2019 06:20:00')
         },
         { firstName: 'Kevin',
           lastName: 'Doe',
@@ -35,8 +38,10 @@ export class UsersComponent implements OnInit {
             city: 'Boston',
             state: 'MA'
           },
-          image: 'http://lorempixel.com/600/600/people/2',
-          isActive: false
+          // image: 'http://lorempixel.com/600/600/people/2',
+          isActive: false,
+          // balance: 200,
+          registered: new Date('08/11/2018 07:20:00')
         },
         { firstName: 'Mark',
           lastName: 'Doe',
@@ -46,8 +51,10 @@ export class UsersComponent implements OnInit {
             city: 'Boston',
             state: 'MA'
           },
-          image: 'http://lorempixel.com/600/600/people/1',
-          isActive: true
+          // image: 'http://lorempixel.com/600/600/people/1',
+          isActive: true,
+          // balance: 100,
+          registered: new Date('08/11/2017 05:20:00')
         },
       ];
       this.loaded = true;
@@ -63,18 +70,29 @@ export class UsersComponent implements OnInit {
       //   //   state: 'MA'
       //   // }
       // });
-      this.setCurrentClasses();
+      // this.setCurrentClasses();
+      // this.setCurrentStyles();
   }
 
   addUser(user: User) {
     this.users.push(user);
   }
 
-  setCurrentClasses() {
-    this.currentClasses = {
-      'btn-success': this.enableAdd,
-      'big-text': this.showExtended
-    }
+  fireEvent(e) {
+    console.log('Button Clicked');
   }
+  // setCurrentClasses() {
+  //   this.currentClasses = {
+  //     'btn-success': this.enableAdd,
+  //     'big-text': this.showExtended
+  //   }
+  // }
+
+  // setCurrentStyles() {
+  //   this.currentStyles = {
+  //     'padding-top': this.showExtended ? '0' : '120px',
+  //     'font-size': this.showExtended ? '' : '60px'
+  //   }
+  // }
 
 }
