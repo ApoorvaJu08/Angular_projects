@@ -6,10 +6,22 @@ import { User } from '../../models/user';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
+  user: User = {
+    firstName: '',
+    lastName: '',
+    email: ''
+    // age: null,
+    // address: {
+    //   street: '',
+    //   city: '',
+    //   state: ''
+    // }
+  }
   users: User[];
   showExtended: boolean = true;
   loaded: boolean = false;
-  enableAdd: boolean = true;
+  enableAdd: boolean = false;
+  showUserForm: boolean = false;
   // currentClasses = {};
   // currentStyles = {};
   constructor() { }
@@ -19,12 +31,13 @@ export class UsersComponent implements OnInit {
       this.users = [
         { firstName: 'John',
           lastName: 'Doe',
-          age: 30,
-          address: {
-            street: '50 main st',
-            city: 'Boston',
-            state: 'MA'
-          },
+          email: 'john@gmail.com',
+          // age: 30,
+          // address: {
+          //   street: '50 main st',
+          //   city: 'Boston',
+          //   state: 'MA'
+          // },
           // image: 'http://lorempixel.com/600/600/people/3',
           isActive: true,
           // balance: 100,
@@ -33,12 +46,13 @@ export class UsersComponent implements OnInit {
         },
         { firstName: 'Kevin',
           lastName: 'Doe',
-          age: 30,
-          address: {
-            street: '50 main st',
-            city: 'Boston',
-            state: 'MA'
-          },
+          email: 'kevin@gmail.com',
+          // age: 30,
+          // address: {
+          //   street: '50 main st',
+          //   city: 'Boston',
+          //   state: 'MA'
+          // },
           // image: 'http://lorempixel.com/600/600/people/2',
           isActive: false,
           // balance: 200,
@@ -47,12 +61,13 @@ export class UsersComponent implements OnInit {
         },
         { firstName: 'Mark',
           lastName: 'Doe',
-          age: 30,
-          address: {
-            street: '50 main st',
-            city: 'Boston',
-            state: 'MA'
-          },
+          email: 'mark@gmail.com',
+          // age: 30,
+          // address: {
+          //   street: '50 main st',
+          //   city: 'Boston',
+          //   state: 'MA'
+          // },
           // image: 'http://lorempixel.com/600/600/people/1',
           isActive: true,
           // balance: 100,
@@ -77,8 +92,25 @@ export class UsersComponent implements OnInit {
       // this.setCurrentStyles();
   }
 
-  addUser(user: User) {
-    this.users.push(user);
+  // addUser() {
+  //   this.user.isActive = true;
+  //   this.user.registered = new Date();
+  //   this.users.unshift(this.user);
+  //   this.user = {
+  //     firstName: '',
+  //     lastName: '',
+  //     email: ''
+  //     // age: null,
+  //     // address: {
+  //     //   street: '',
+  //     //   city: '',
+  //     //   state: ''
+  //     // }
+  //   }
+  // }
+
+  onSubmit() {
+    console.log(123);
   }
 
   

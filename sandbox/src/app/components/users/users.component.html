@@ -1,17 +1,56 @@
-<h2>Users</h2>
-<button (click)="addUser({firstName: 'Mary', lastName: 'Jackson', isActive: true})" [disabled]="!enableAdd" class="btn btn-light btn-block mb-3">Add New User</button>
+<button (click)="showUserForm = !showUserForm" class="btn btn-dark mb-3">Add User</button>
+<div class="card card-body mb-3" *ngIf="showUserForm">
+  <h2>Add User</h2>
+  <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" [(ngModel)]="user.firstName" class="form-control"
+      [ngClass]="{'is-invalid': user.firstName.errors && user.firstName.touched}"
+      #userFirstName="ngModel" required minlength="2" name="firstName">
+      <div class="invalid-feedback">First Name required</div>
+    </div>
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" [(ngModel)]="user.lastName" class="form-control" name="lastName">
+    </div>
+    <div class="form-group">
+      <label>Email</label>
+      <input type="text" [(ngModel)]="user.email" class="form-control" name="email">
+    </div>
+    <!-- <div class="form-group">
+      <label>Age</label>
+      <input type="number" [(ngModel)]="user.age" class="form-control" name="age">
+    </div>
+    <div class="form-group">
+      <label>Street Adress</label>
+      <input type="text" [(ngModel)]="user.address.street" class="form-control" name="street">
+    </div>
+    <div class="form-group">
+      <label>City</label>
+      <input type="text" [(ngModel)]="user.address.city" class="form-control" name="city">
+    </div>
+    <div class="form-group">
+      <label>State</label>
+      <input type="text" [(ngModel)]="user.address.state" class="form-control" name="state">
+    </div> -->
+    <button [disabled]="!userForm.form.valid" 
+    class="btn btn-dark btn-block mb-3">Add New User</button>
+  </form>
+</div>
+<!-- <h2>Users</h2> -->
 <ul class="list-unstyled" *ngIf="loaded && users?.length > 0">
   <li class="card card-body mb-2" *ngFor="let user of users" [class.bg-light]="user.isActive">
     <h3>{{ user.firstName }} {{ user.lastName}}
       <small>
-        <button (click)="user.hide = !user.hide" class="btn btn-sm">
-          <i class="material-icons" [ngClass]="user.hide ? 'add_box' : 'remove' ">add_box</i>
+        <button (click)="user.hide = !user.hide" class="btn btn-dark btn-sm">Toggle
+          <!-- <i class="material-icons" [ngClass]="user.hide ? 'add_box' : 'remove' ">add_box</i> -->
           </button>
       </small>
     </h3>
-    <ul class="list-group" *ngIf="!user.hide && user.age && user.address">
-      <li class="list-group-item">Age: {{ user.age }}</li>
-      <li class="list-group-item">Address: {{user.address.street}} {{user.address.city}}, {{user.address.state}} </li>
+    <ul class="list-group" *ngIf="!user.hide">
+      <li class="list-group-item">Email: {{ user.email }}</li>
+      <!-- <li class="list-group-item">Age: {{ user.age }}</li> -->
+      <!-- <li class="list-group-item">Address: {{user.address.street}} {{user.address.city}}, {{user.address.state}} </li> -->
       <li class="list-group-item">Joined: {{ user.registered | date }}</li>
     </ul>
   </li>
