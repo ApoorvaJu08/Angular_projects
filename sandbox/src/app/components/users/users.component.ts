@@ -7,7 +7,7 @@ import { User } from '../../models/user';
 })
 export class UsersComponent implements OnInit {
   users: User[];
-  showExtended: boolean = false;
+  showExtended: boolean = true;
   loaded: boolean = false;
   enableAdd: boolean = true;
   // currentClasses = {};
@@ -28,7 +28,8 @@ export class UsersComponent implements OnInit {
           // image: 'http://lorempixel.com/600/600/people/3',
           isActive: true,
           // balance: 100,
-          registered: new Date('08/11/2019 06:20:00')
+          registered: new Date('08/11/2019 06:20:00'),
+          hide: true
         },
         { firstName: 'Kevin',
           lastName: 'Doe',
@@ -41,7 +42,8 @@ export class UsersComponent implements OnInit {
           // image: 'http://lorempixel.com/600/600/people/2',
           isActive: false,
           // balance: 200,
-          registered: new Date('08/11/2018 07:20:00')
+          registered: new Date('08/11/2018 07:20:00'),
+          hide: true
         },
         { firstName: 'Mark',
           lastName: 'Doe',
@@ -54,7 +56,8 @@ export class UsersComponent implements OnInit {
           // image: 'http://lorempixel.com/600/600/people/1',
           isActive: true,
           // balance: 100,
-          registered: new Date('08/11/2017 05:20:00')
+          registered: new Date('08/11/2017 05:20:00'),
+          hide: true
         },
       ];
       this.loaded = true;
@@ -78,9 +81,7 @@ export class UsersComponent implements OnInit {
     this.users.push(user);
   }
 
-  fireEvent(e) {
-    console.log('Button Clicked');
-  }
+  
   // setCurrentClasses() {
   //   this.currentClasses = {
   //     'btn-success': this.enableAdd,
