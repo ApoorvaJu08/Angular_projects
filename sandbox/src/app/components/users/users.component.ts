@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { User } from '../../models/user';
+import { DataService } from 'src/app/services/data.service';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -25,57 +26,11 @@ export class UsersComponent implements OnInit {
   @ViewChild('userForm') form: any;
   // currentClasses = {};
   // currentStyles = {};
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
+    this.users = this.dataService.getUsers();
     // setTimeout(() => {
-      this.users = [
-        { firstName: 'John',
-          lastName: 'Doe',
-          email: 'john@gmail.com',
-          // age: 30,
-          // address: {
-          //   street: '50 main st',
-          //   city: 'Boston',
-          //   state: 'MA'
-          // },
-          // image: 'http://lorempixel.com/600/600/people/3',
-          isActive: true,
-          // balance: 100,
-          registered: new Date('08/11/2019 06:20:00'),
-          hide: true
-        },
-        { firstName: 'Kevin',
-          lastName: 'Doe',
-          email: 'kevin@gmail.com',
-          // age: 30,
-          // address: {
-          //   street: '50 main st',
-          //   city: 'Boston',
-          //   state: 'MA'
-          // },
-          // image: 'http://lorempixel.com/600/600/people/2',
-          isActive: false,
-          // balance: 200,
-          registered: new Date('08/11/2018 07:20:00'),
-          hide: true
-        },
-        { firstName: 'Mark',
-          lastName: 'Doe',
-          email: 'mark@gmail.com',
-          // age: 30,
-          // address: {
-          //   street: '50 main st',
-          //   city: 'Boston',
-          //   state: 'MA'
-          // },
-          // image: 'http://lorempixel.com/600/600/people/1',
-          isActive: true,
-          // balance: 100,
-          registered: new Date('08/11/2017 05:20:00'),
-          hide: true
-        },
-      ];
       this.loaded = true;
     // }, 2000);
 
@@ -117,7 +72,7 @@ export class UsersComponent implements OnInit {
       value.isActive = true;
       value.registered = new Date();
       value.hide = true;
-      this.users.unshift(value);
+      this.dataService.addUser(value);
       this.form.reset();
     }
   }
