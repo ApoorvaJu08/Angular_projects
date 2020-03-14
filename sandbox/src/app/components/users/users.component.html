@@ -4,10 +4,13 @@
   <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
     <div class="form-group">
       <label>First Name</label>
-      <input type="text" [(ngModel)]="user.firstName" class="form-control"
+      <!-- <input type="text" [(ngModel)]="user.firstName" class="form-control"
       [ngClass]="{'is-invalid': user.firstName.errors && user.firstName.touched}"
       #userFirstName="ngModel" required minlength="2" name="firstName">
-      <div class="invalid-feedback">First Name required</div>
+      <div class="invalid-feedback">First Name required</div> -->
+      <input type="text" [(ngModel)]="user.firstName" class="form-control"
+      #userFirstName="ngModel" required minlength="2" name="firstName">
+      <!-- <div class="invalid-feedback">First Name required</div> -->
     </div>
     <div class="form-group">
       <label>Last Name</label>
