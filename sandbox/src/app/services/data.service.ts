@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
   users: User[];
+  data: Observable<Array<any>>;
   constructor() {
     this.users = [
       { firstName: 'John',
