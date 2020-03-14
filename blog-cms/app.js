@@ -40,9 +40,6 @@ app.use('/users', usersRouter);
 app.use('/api/auth', auth);
 // app.use('/api/public/category', category);
 
-// here you define the path for reaching to your category api
-//  and then again you are adding the same routes
-
 
 app.use('/api/category', category);
 app.use('/api/post', post);
