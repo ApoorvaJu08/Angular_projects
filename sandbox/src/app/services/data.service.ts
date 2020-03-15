@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -74,9 +74,8 @@ export class DataService {
     })
     return this.data;
   }
-  getUsers(): User[] {
-    console.log('users from service');
-    return this.users;
+  getUsers(): Observable<User[]> {
+    return of(this.users);
   }
   addUser(user: User) {
     this.users.unshift(user);

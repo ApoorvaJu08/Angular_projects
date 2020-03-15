@@ -33,9 +33,11 @@ export class UsersComponent implements OnInit {
     this.dataService.getData().subscribe(data => {
       console.log(data);
     });
-    this.users = this.dataService.getUsers();
-    // setTimeout(() => {
+    this.dataService.getUsers().subscribe(users => {
+      this.users = users;
       this.loaded = true;
+    });
+    // setTimeout(() => {
     // }, 2000);
 
       // this.addUser({
