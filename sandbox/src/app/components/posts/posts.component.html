@@ -1,1 +1,7 @@
-<p>posts works!</p>
+<h2>Posts</h2>
+<div class="cards" *ngFor="let post of posts">
+    <div class="card-body">
+        <h3>{{ post.title }}</h3>
+        <p>{{ post.body }}</p>
+    </div>
+</div>

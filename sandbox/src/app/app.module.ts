@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserService } from './services/user.service';
 import { PostsComponent } from './components/posts/posts.component';
 import { PostService } from './services/post.service';
+import { from } from 'rxjs';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,8 @@ import { PostService } from './services/post.service';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [UserService, PostService],
   bootstrap: [AppComponent]
