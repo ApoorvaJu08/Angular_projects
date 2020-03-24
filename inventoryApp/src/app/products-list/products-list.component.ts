@@ -12,10 +12,11 @@ export class ProductsListComponent implements OnInit {
   @Output() onProductSelected: EventEmitter<Product>;
   // @property currentProduct - local state containing the currently selected `Product`
   private currentProduct: Product;
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor() {
     this.onProductSelected = new EventEmitter();
+  }
+
+  ngOnInit() {
   }
   clicked(product: Product): void {
     this.currentProduct = product;
