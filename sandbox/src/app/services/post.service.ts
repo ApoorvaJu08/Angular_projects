@@ -18,7 +18,7 @@ export class PostService {
     return this.http.get<Post[]>(this.postsUrl);
   }
 
-  savePosts() {
-
+  savePost(post: Post): Observable<Post> {
+    return this.http.post<Post>(this.postsUrl, post, httpOptions);
   }
 }
