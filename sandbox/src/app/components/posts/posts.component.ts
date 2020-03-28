@@ -14,7 +14,7 @@ export class PostsComponent implements OnInit {
     title: '',
     body: ''
   };
-  isEdit: boolean;
+  isEdit: boolean = false;
   constructor(private postService: PostService) { }
 
   ngOnInit() {
@@ -44,7 +44,7 @@ export class PostsComponent implements OnInit {
           body: ''
         }
       }
-    })
+    });
   }
 
   removePost(post: Post) {
