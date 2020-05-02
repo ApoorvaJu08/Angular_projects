@@ -1,3 +1,7 @@
+This is a project where users can keep a check on the list of tasks to be done by them.
+
+Link: https://devlogger.now.sh
+
 # Devlogger
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.0-next.2.

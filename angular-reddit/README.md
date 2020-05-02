@@ -1,4 +1,4 @@
-This is an application made with angular which has ffeatures like reddit.
+This is an application made with angular which has features like reddit.
 
 Live Demo: https://angular-reddit-lovat-eight.now.sh/ 
 
