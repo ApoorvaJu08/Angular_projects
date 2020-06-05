@@ -13,10 +13,13 @@
 
       <div class="col-md-9">
         <div class="description-div">
-          <div class="row">
-            <a href="{{ article.link }}">{{ article.title }}</a>
+          <div class="row">{{article.title}}
+            <!-- <a href="{{ article.link }}">{{ article.title }}</a> -->
           </div>
-          <div>({{ article.domain() }})</div>
+          <!-- <div>({{ article.domain() }})</div> -->
+          <div>
+            <a href="{{article.link}}">{{ article.link }}</a>
+          </div>
           <div class="row">
             <div class="col-md-6">
               <div class="vote-up">
